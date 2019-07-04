@@ -13,7 +13,7 @@ Actions.setName = function setName(selected_name) {
 Actions.getList = function getList() {
   return dispatch => {
     /* mocking api call - don't change */
-    const list = ["You", "Cole", "James", "Radu"]
+    const list = ["Wendy", "Cole", "James", "Radu"]
     setTimeout(function() {
       dispatch({
         type: GET_LIST,

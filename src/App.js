@@ -61,6 +61,7 @@ class App extends Component {
           onChange={event => this.onSelect(event)}
           id="selector"
           value={this.props.names.selected_name}>
+          <option id="option">{this.props.names.list}</option>
         </select>
 
         <ChildComponent selected_name={this.props.names.selected_name} />
