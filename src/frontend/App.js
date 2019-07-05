@@ -10,14 +10,24 @@ import ChildComponent from "./ChildComponent"
 class App extends Component {
 
   componentDidMount() {
-    const props = this.props
-    props.dispatch(Actions.getList()); //ASYNC FN => 1.5s
+    fetch("/rest/people")
+      .then(response => response.json())
+      .then(data => {
+        this.props.dispatch(Actions.addList(data));
+      })
+      .catch(error => console.log(error));
   }
+    // const props = this.props
+    // props.dispatch(Actions.getList()); //ASYNC FN => 1.5s
+  
 
   componentDidUpdate(prevProps) {
     //Check that props.names.list changed
+
     if(this.props.names.list.length !== prevProps.names.list.length) {
-      this.initOptionList(this.props.names.list, "selector");
+      const list = this.props.names.list
+        .map(name => name.name)
+      this.initOptionList(list, "selector");
     }
   } 
 
