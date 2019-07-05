@@ -9,20 +9,21 @@ import ChildComponent from "./ChildComponent"
 
 class App extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     const props = this.props
-    props.dispatch(Actions.getList())
-    this.initOptionList(props.names.list, "selector")
-
+    props.dispatch(Actions.getList()); //ASYNC FN => 1.5s
   }
+
+  componentDidUpdate(prevProps) {
+    //Check that props.names.list changed
+    if(this.props.names.list.length !== prevProps.names.list.length) {
+      this.initOptionList(this.props.names.list, "selector");
+    }
+  } 
 
   onSelect(event) {
     const name = event.target.value
-    this.props.dispatch(Actions.setName(name))
+    this.props.dispatch(Actions.setName(name)) 
   }
 
   initOptionList( names, select_field ) {
@@ -60,14 +61,16 @@ class App extends Component {
         <select
           onChange={event => this.onSelect(event)}
           id="selector"
-          value={this.props.names.selected_name}>
-            {
+          value={this.props.names.selected_name}> 
+          
+          {/* Suggest refactor */}
+            {/* {
                 this.props.names.list.map(name => {
                 return (
-                  <option id="option" value={name}>{name}</option>
+                  <option id="option" value={name}>{name} </option>
                 );
               })
-            }
+            }    */}
           
         </select>
 

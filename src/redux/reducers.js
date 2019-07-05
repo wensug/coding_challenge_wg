@@ -8,7 +8,7 @@ function names(state = {
 }, action) {
  switch (action.type) {
    case SET_NAME:
-     return Object.assign({}, state, {
+   return Object.assign({}, state, {
        selected_name: action.selected_name
      })
    case GET_LIST:

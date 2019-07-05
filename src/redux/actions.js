@@ -21,8 +21,8 @@ Actions.getList = function getList() {
           list
         }
       })
-    }, 1500);
-    /* End mock */
+     }, 1500);
+    // /* End mock */
   }
 }
 
