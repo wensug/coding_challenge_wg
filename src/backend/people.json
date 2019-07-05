@@ -1,0 +1,10 @@
+{
+    "people":[
+        {"name":"James"},
+        {"name":"Jono"},
+        {"name":"John"},
+        {"name":"Radu"},
+        {"name":"Cole"},
+        {"name":"Wendy"}
+    ]
+}
