@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ChildComponent extends Component {
+class NameList extends Component {
 
   constructor(props) {
     super(props)
@@ -26,4 +26,4 @@ class ChildComponent extends Component {
   }
 }
 
-export default ChildComponent
+export default NameList

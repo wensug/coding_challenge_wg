@@ -5,7 +5,7 @@ import './App.css';
 import { connect } from "react-redux"
 import Actions from "./redux/actions"
 
-import ChildComponent from "./ChildComponent"
+import NameList from "./NameList"
 
 class App extends Component {
 
@@ -17,9 +17,6 @@ class App extends Component {
       })
       .catch(error => console.log(error));
   }
-    // const props = this.props
-    // props.dispatch(Actions.getList()); //ASYNC FN => 1.5s
-  
 
   componentDidUpdate(prevProps) {
     //Check that props.names.list changed
@@ -39,10 +36,10 @@ class App extends Component {
   initOptionList( names, select_field ) {
     let select, option;
     select = document.getElementById( select_field );
-    option = document.createElement( 'option' );
+    option = document.createElement( "option" );
 
     for (var name of names) {
-      option = document.createElement( 'option' );
+      option = document.createElement( "option" );
       option.value = name;
       option.text = name;
 
@@ -84,7 +81,7 @@ class App extends Component {
           
         </select>
 
-        <ChildComponent selected_name={this.props.names.selected_name} />
+        <NameList selected_name={this.props.names.selected_name} />
 
       </div>
     );

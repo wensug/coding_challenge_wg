@@ -4,7 +4,6 @@ export const SET_NAME = "SET_NAME"
 export const GET_LIST = "GET_LIST"
 export const ADD_LIST = "ADD_LIST"
 
-
 Actions.setName = function setName(selected_name) {
   return {
     type: SET_NAME,
@@ -31,7 +30,7 @@ Actions.getList = function getList() {
         }
       })
      }, 1500);
-    // /* End mock */
+    /* End mock */
   }
 }
 
